@@ -55,7 +55,7 @@ export class UserController {
       throw new BadRequestException('Invalid email!');
     }
     const passwordValidation = await this.passwordValidator.validatePassword(requestBody.password);
-    if (!emailValidation.isValid) {
+    if (!passwordValidation.isValid) {
       throw new BadRequestException('Invalid password!');
     }
 
